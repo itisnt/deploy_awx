@@ -3,7 +3,7 @@ apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx-syx6
-  namespace: x0c-awxtower-prod
+  namespace: awx-syx6
 spec:
   
   # Eigentlich Default....
@@ -21,13 +21,13 @@ spec:
 
   # Postgres lassen wir den Operator erstellen.
   # Storage Class in der Bedag
-  postgres_storage_class: msa-01
+  postgres_storage_class: standard
 
   # Logs einschalten
   no_log: false
 
   # LDAP SSL Cert
-  ldap_cacert_secret: awx-syx6-custom-certs
+  # ldap_cacert_secret: awx-syx6-custom-certs
 
   # LDAP Teil nicht implementiert. Funktioniert zwar, ist dann aber im AWX-GUI
   # nicht mehr aenderbar und das ist muehsam. 
@@ -56,6 +56,6 @@ spec:
   # awx-syx6-task... POD im Container awx-syx6-task
   #      /dev/sdg        2.0G   24K  1.9G   1% /var/lib/awx/projects
   projects_persistence: true
-  projects_storage_class: msa-01
+  projects_storage_class: standard
   projects_storage_size: 10Gi
   projects_storage_access_mode: ReadWriteOnce
