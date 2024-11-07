@@ -20,4 +20,4 @@ spec:
           service:
             name: awx-syx6-server
             port:
-              number: 8052
+              number: 80
