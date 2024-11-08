@@ -17,7 +17,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /awx
+        path: /awx(/|$)(.*)
         backend:
           service:
             name: awx-syx6-service
