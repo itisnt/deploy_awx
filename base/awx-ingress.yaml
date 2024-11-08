@@ -9,16 +9,13 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     alb.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    nginx.org/mergeable-ingress-type: "minion"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 
 spec:
   rules:
-  - host: nova3.pirate-it.ch
+  - host: nova3awx.pirate-it.ch
     http:
       paths:
-      - path: /awx/(/|$)(.*)
+      - path: /
         pathType: ImplementationSpecific
         backend:
           service:
