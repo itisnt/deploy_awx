@@ -18,8 +18,8 @@ spec:
   - host: nova3.pirate-it.ch
     http:
       paths:
-      - pathType: ImplementationSpecific
-        path: /awx(/|$)(.*)
+      - path: /awx(/|$)(.*)
+        pathType: ImplementationSpecific
         backend:
           service:
             name: awx-syx6-service
